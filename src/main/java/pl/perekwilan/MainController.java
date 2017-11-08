@@ -1,4 +1,4 @@
-package main.pl.perekwilan;
+package pl.perekwilan;
 
 public class MainController {
 }
