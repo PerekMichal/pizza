@@ -1,4 +1,4 @@
-package pl.perekwilan.utils;
+package pl.perekwilan.models.utils;
 
 public class Config {
     public static final String APP_ID = "AIzaSyAF4qJa02KubhGk7Ih61nWp5fJ3nGQsKnw";

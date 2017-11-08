@@ -1,12 +1,9 @@
-package pl.perekwilan.utils;
-
-import com.sun.net.ssl.internal.www.protocol.https.HttpsURLConnectionOldImpl;
+package pl.perekwilan.models.utils;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
 
