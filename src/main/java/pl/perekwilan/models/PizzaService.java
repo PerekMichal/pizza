@@ -1,7 +1,9 @@
-import com.sun.deploy.net.HttpUtils;
+package pl.perekwilan.models;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
-import pl.perekwilan.utils.Config;
+import pl.perekwilan.models.utils.Config;
+import pl.perekwilan.models.utils.HttpUtils;
 
 public class PizzaService {
     public void makeCall (String city) {
