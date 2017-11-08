@@ -8,17 +8,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.perekwilan.controllers.MainController">
    <children>
-      <Button fx:id="ButtonMakePizz" layoutX="166.0" layoutY="494.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="269.0" text="Pokaz Pizzerie">
+      <Button fx:id="buttonMakePizz" layoutX="166.0" layoutY="494.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="269.0" text="Pokaz Pizzerie">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <TextField fx:id="GiveCity" layoutX="101.0" layoutY="421.0" prefHeight="50.0" prefWidth="400.0" text="Podaj miasto">
+      <TextField fx:id="giveCity" layoutX="101.0" layoutY="421.0" prefHeight="50.0" prefWidth="400.0" text="Podaj miasto">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label fx:id="TheBestPizza" layoutX="103.0" layoutY="93.0" prefHeight="277.0" prefWidth="394.0" text="Tutaj będą najlepsze pizzerie w okolicy!!" wrapText="true">
+      <Label fx:id="theBestPizza" layoutX="103.0" layoutY="93.0" prefHeight="277.0" prefWidth="394.0" text="Tutaj będą najlepsze pizzerie w okolicy!!" wrapText="true">
          <font>
             <Font size="24.0" />
          </font>
