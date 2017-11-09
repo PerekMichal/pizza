@@ -31,6 +31,7 @@ public class MainController implements Initializable, PizzaObserver {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        pizzaService.registerObserver(this);
         buttonMakePizz.setOnMouseClicked(s ->  showPizza());
     }
 

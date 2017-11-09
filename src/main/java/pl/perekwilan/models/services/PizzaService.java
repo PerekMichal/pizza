@@ -32,18 +32,15 @@ public class PizzaService {
         }
     }
 
-
     public void makeCall (String city) {
         parseJsonData(HttpUtils.makeHttpRequest(Config.APP_URL1 + city + "&key=" + Config.APP_ID));//makeHttpRequest - zwraca tekst html
     }
-
-
 
     private void parseJsonData(String text){
         JSONObject root = new JSONObject(text);
         JSONArray results = root.getJSONArray("results");
         List<PizzaData> dataList = new ArrayList<>();
-        PizzaData data;
+        PizzaData data = null;
         for (int i = 0; i < results.length(); i++) {
             JSONObject main = results.getJSONObject(i);
 
@@ -52,10 +49,9 @@ public class PizzaService {
             data = new PizzaData();
             data.setRating(rating);
             dataList.add(data);
-
         }
 
-
-////////////////////// przekazac do obserwatora 
+        notifyObservers(data);
+////////////////////// przekazac do obserwatora
     }
 }
