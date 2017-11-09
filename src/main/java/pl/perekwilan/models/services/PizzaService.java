@@ -41,9 +41,9 @@ public class PizzaService {
         JSONObject root = new JSONObject(text);
         JSONArray results = root.getJSONArray("address_components");
 
-
-        int temp = results.getFloat("rating");
-        String name = root.
+//
+//        int temp = results.getFloat("rating");
+//        String name = root.
 
 //
     }  PizzaData data = new PizzaData();
