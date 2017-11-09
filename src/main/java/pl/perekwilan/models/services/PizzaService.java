@@ -6,7 +6,9 @@ import pl.perekwilan.models.utils.Config;
 import pl.perekwilan.models.utils.HttpUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.TreeMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -45,22 +47,33 @@ public class PizzaService {
     private void parseJsonData(String text){
         JSONObject root = new JSONObject(text);
         JSONArray results = root.getJSONArray("results");
-        List<PizzaData> dataList = new ArrayList<>();
+
         PizzaData data = null;
-        float maxRating = 0;
+        float max = 0;
+
         for (int i = 0; i < results.length(); i++) {
             JSONObject main = results.getJSONObject(i);
 
             float rating = main.getFloat("rating");
-            String name = main.getString("name");
 
-            data = new PizzaData();
-            data.setRating(rating);
-            data.setName(name);
-            dataList.add(data);
-            System.out.println(name + rating);
+            if(rating > max){
+
+                String name = main.getString("name");
+
+                max = rating;
+                data = new PizzaData();
+                data.setRating(rating);
+                data.setName(name);
+                data.setMax(max);
+            }
+
 
         }
+
+
+        System.out.println(max);
+
+
         notifyObservers(data);
 
     }

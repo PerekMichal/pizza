@@ -12,6 +12,7 @@ import pl.perekwilan.models.services.PizzaObserver;
 import pl.perekwilan.models.services.PizzaService;
 
 import java.net.URL;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 
@@ -44,7 +45,5 @@ public class MainController implements Initializable, PizzaObserver {
     @Override
     public void onPizzaUpdate(PizzaData data) {
     Platform.runLater(() -> theBestPizza.setText("Name: " + data.getName() + ". Rating: " + data.getRating()));
-
-    PizzaData model = new PizzaData();      //todo !!!!
     }
 }
