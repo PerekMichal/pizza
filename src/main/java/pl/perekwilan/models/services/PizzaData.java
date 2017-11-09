@@ -3,7 +3,7 @@ package pl.perekwilan.models.services;
 public class PizzaData {
 
     private String city;                    //moglbys jutro wyciagnac dla miasta rating pizzy z JSONa
-    private String pizza;
+    private String name;
     private float rating;
 
     public PizzaData(){
@@ -18,12 +18,12 @@ public class PizzaData {
         this.city = city;
     }
 
-    public String getPizza() {
-        return pizza;
+    public String getName() {
+        return name;
     }
 
-    public void setPizza(String pizza) {
-        this.pizza = pizza;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public float getRating() {

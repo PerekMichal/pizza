@@ -43,7 +43,8 @@ public class MainController implements Initializable, PizzaObserver {
 
     @Override
     public void onPizzaUpdate(PizzaData data) {
+    Platform.runLater(() -> theBestPizza.setText("Name: " + data.getName() + ". Rating: " + data.getRating()));
 
-//todo
+    PizzaData model = new PizzaData();      //todo !!!!
     }
 }
