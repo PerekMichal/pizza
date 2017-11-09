@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import pl.perekwilan.models.PizzaModel;
+import pl.perekwilan.models.dao.PizzaDao;
 import pl.perekwilan.models.services.PizzaData;
 import pl.perekwilan.models.services.PizzaObserver;
 import pl.perekwilan.models.services.PizzaService;
@@ -25,6 +26,7 @@ public class MainController implements Initializable, PizzaObserver {
 
     @FXML
     Label theBestPizza;
+
 
     private PizzaService pizzaService = PizzaService.getService();
 

@@ -2,6 +2,7 @@ package pl.perekwilan.models.services;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import pl.perekwilan.models.PizzaModel;
 import pl.perekwilan.models.utils.Config;
 import pl.perekwilan.models.utils.HttpUtils;
 
@@ -37,6 +38,27 @@ public class PizzaService {
         parseJsonData(HttpUtils.makeHttpRequest(Config.APP_URL1 + city + "&key" + Config.APP_ID));//makeHttpRequest - zwraca tekst html
     }
 
+    public List<PizzaModel> loadPizza(){
+        List<PizzaModel> pizzaModels = new ArrayList<>();
+
+        PizzaModel model;
+
+
+        model = new PizzaModel();
+        pizzaModels.add(model);
+
+
+        return pizzaModels;
+    }
+
+    public List<PizzaModel> loadPizza(float rating){
+        List<PizzaModel> pizzaModels = new ArrayList<>();
+
+
+        return pizzaModels;
+    }
+
+
     private void parseJsonData(String text){
         JSONObject root = new JSONObject(text);
         JSONArray results = root.getJSONArray("address_components");
@@ -51,7 +73,11 @@ public class PizzaService {
             data.setRating(rating);
             System.out.println(rating);
 
+            loadPizza().add(rating, city);
+
+
         }
+
 
 
     }
