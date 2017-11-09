@@ -2,7 +2,6 @@ package pl.perekwilan.models.services;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import pl.perekwilan.models.PizzaModel;
 import pl.perekwilan.models.utils.Config;
 import pl.perekwilan.models.utils.HttpUtils;
 
@@ -35,50 +34,28 @@ public class PizzaService {
 
 
     public void makeCall (String city) {
-        parseJsonData(HttpUtils.makeHttpRequest(Config.APP_URL1 + city + "&key" + Config.APP_ID));//makeHttpRequest - zwraca tekst html
+        parseJsonData(HttpUtils.makeHttpRequest(Config.APP_URL1 + city + "&key=" + Config.APP_ID));//makeHttpRequest - zwraca tekst html
     }
 
-    public List<PizzaModel> loadPizza(){
-        List<PizzaModel> pizzaModels = new ArrayList<>();
-
-        PizzaModel model;
-
-
-        model = new PizzaModel();
-        pizzaModels.add(model);
-
-
-        return pizzaModels;
-    }
-
-    public List<PizzaModel> loadPizza(float rating){
-        List<PizzaModel> pizzaModels = new ArrayList<>();
-
-
-        return pizzaModels;
-    }
 
 
     private void parseJsonData(String text){
         JSONObject root = new JSONObject(text);
-        JSONArray results = root.getJSONArray("address_components");
-
+        JSONArray results = root.getJSONArray("results");
+        List<PizzaData> dataList = new ArrayList<>();
         PizzaData data;
-        for (int i = 0; i < root.length(); i++) {
-            JSONObject main = root.getJSONObject("main");
+        for (int i = 0; i < results.length(); i++) {
+            JSONObject main = results.getJSONObject(i);
 
-            float rating = root.getFloat("rating");
+            float rating = main.getFloat("rating");
 
             data = new PizzaData();
             data.setRating(rating);
-            System.out.println(rating);
-
-            loadPizza().add(rating, city);
-
+            dataList.add(data);
 
         }
 
 
-
+////////////////////// przekazac do obserwatora 
     }
 }
