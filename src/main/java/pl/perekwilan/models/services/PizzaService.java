@@ -34,22 +34,14 @@ public class PizzaService {
 
 
     public void makeCall (String city) {
-        parseJsonData(HttpUtils.makeHttpRequest(Config.APP_URL + city + "&key" + Config.APP_ID));//makeHttpRequest - zwraca tekst html
+        parseJsonData(HttpUtils.makeHttpRequest(Config.APP_URL1 + city + "&key" + Config.APP_ID));//makeHttpRequest - zwraca tekst html
     }
 
     private void parseJsonData(String text){
         JSONObject root = new JSONObject(text);
         JSONArray results = root.getJSONArray("address_components");
 
-//
-//        int temp = results.getFloat("rating");
-//        String name = root.
 
-//
-//    }  PizzaData data = new PizzaData();
-//
-//    data.getRating(rating);
-//    data.getCity(city);
 
     }
 }

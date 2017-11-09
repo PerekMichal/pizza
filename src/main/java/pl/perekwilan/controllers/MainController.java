@@ -1,5 +1,6 @@
 package pl.perekwilan.controllers;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -40,8 +41,10 @@ public class MainController implements Initializable, PizzaObserver {
 
     @Override
     public void onPizzaUpdate(PizzaData data) {
-        theBestPizza.setText("Temperatura: " + data.getRating());
 
+        theBestPizza.setText("Najlepsza: " + data.getRating());
+
+        PizzaModel model = new PizzaModel(data.getCity(), data.getRating());
 
     }
 }
