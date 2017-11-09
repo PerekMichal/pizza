@@ -39,13 +39,16 @@ public class PizzaService {
 
     private void parseJsonData(String text){
         JSONObject root = new JSONObject(text);
-        JSONArray results = root.getJSONArray("results");
+        JSONArray results = root.getJSONArray("address_components");
+
+
+        int temp = results.getFloat("rating");
+        String name = root.
 
 //
-//    PizzaData data = new PizzaData();
+    }  PizzaData data = new PizzaData();
 //
-//    data.getRating(rating);
-//    data.getCity(city);
+//        data.getRating(rating);
+//        data.getCity(name);
 
-    }
 }
