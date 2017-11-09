@@ -1,7 +1,5 @@
 package pl.perekwilan.models.services;
 
-import java.util.ArrayList;
-
 public class PizzaData {
 
     private String city;                    //moglbys jutro wyciagnac dla miasta rating pizzy z JSONa
