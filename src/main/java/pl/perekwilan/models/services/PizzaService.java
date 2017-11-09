@@ -34,7 +34,7 @@ public class PizzaService {
 
 
     public void makeCall (String city) {
-        parseJsonData(HttpUtils.makeHttpRequest(Config.APP_URL + city + "&appid=" + Config.APP_ID));//makeHttpRequest - zwraca tekst html
+        parseJsonData(HttpUtils.makeHttpRequest(Config.APP_URL + city + "&key" + Config.APP_ID));//makeHttpRequest - zwraca tekst html
     }
 
     private void parseJsonData(String text){
@@ -46,9 +46,10 @@ public class PizzaService {
 //        String name = root.
 
 //
-    }  PizzaData data = new PizzaData();
+//    }  PizzaData data = new PizzaData();
 //
-//        data.getRating(rating);
-//        data.getCity(name);
+//    data.getRating(rating);
+//    data.getCity(city);
 
+    }
 }
