@@ -60,17 +60,11 @@ public class PizzaService {
 
                 max = rating;
                 data = new PizzaData();
-                data.setRating(rating);
+                data.setMaxRating(rating);
                 data.setName(name);
-                data.setMax(max);
+
             }
-
-
         }
-
-
-        System.out.println(max);
-
 
         notifyObservers(data);
 

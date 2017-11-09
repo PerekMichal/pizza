@@ -4,8 +4,7 @@ public class PizzaData {
 
     private String city;                    //moglbys jutro wyciagnac dla miasta rating pizzy z JSONa
     private String name;
-    private float rating;
-    private float max;
+    private float maxRating;
 
 
     public PizzaData(){
@@ -28,19 +27,12 @@ public class PizzaData {
         this.name = name;
     }
 
-    public float getRating() {
-        return rating;
+    public float getMaxRating() {
+        return maxRating;
     }
 
-    public void setRating(float rating) {
-        this.rating = rating;
+    public void setMaxRating(float maxRating) {
+        this.maxRating = maxRating;
     }
 
-    public float getMax() {
-        return max;
-    }
-
-    public void setMax(float max) {
-        this.max = max;
-    }
 }
